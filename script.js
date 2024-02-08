@@ -22,19 +22,6 @@ function generateLink(e) {
         // alert(getDownloadLink);
         downloadLink.value = getDownloadLink;
 
-        function copyText(target) {
-            if (target.value == "") {
-                alert("Please generate a Download Link")
-                }else {
-                target.select();
-                document.execCommand("copy");
-                alert("Link has been copied to clipboard");
-                }
-        }
-        const copy = document.querySelector(".copy");
-        copy.addEventListener("click", () => {
-            return copyText(downloadLink);
-        })
 
         // // EMBED AUDIO
         // const audio1 = '<audio width="300" height="32" controls="controls" src="';
@@ -67,6 +54,19 @@ function generateLink(e) {
         alert("Please Enter a Google Drive File Link")
     }
 }
+function copyText(target) {
+    if (target.value == "") {
+        alert("Please generate a Download Link")
+        }else {
+        target.select();
+        document.execCommand("copy");
+        alert("Link has been copied to clipboard");
+        }
+}
+const copy = document.querySelector(".copy");
+copy.addEventListener("click", () => {
+    return copyText(downloadLink);
+})
 
 clear.addEventListener("click", clearForm);
 
